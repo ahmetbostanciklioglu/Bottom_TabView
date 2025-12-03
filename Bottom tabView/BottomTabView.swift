@@ -3,20 +3,27 @@ import SwiftUI
 struct Bottomtabview: View {
     var body: some View {
         TabView {
-            Tab("Home", systemImage: "house.fill") {
-                Page1View()
-            }
-            Tab("News", systemImage: "flame.fill") {
-                Page2View()
-            }
-            Tab("Share", systemImage: "paperplane.fill") {
-                Page3View()
+            ForEach(Bottom.allCases, id: \.self) { index in
+                Tab(index.bottomTabTitle, systemImage: index.bottomTabImage) {
+                    BottomTabContent(bottomTab: index)
+                }
             }
         }
     }
-    
 }
 
 #Preview("Bottom Tab View") {
     Bottomtabview()
 }
+
+
+struct BottomTabContent: View {
+    var bottomTab: Bottom
+    var body: some View {
+        Text(bottomTab.pageContent)
+            .fontWeight(.medium)
+            .textScale(.secondary)
+            .foregroundStyle(.gray)
+    }
+}
+
