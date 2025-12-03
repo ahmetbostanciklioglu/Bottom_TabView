@@ -9,16 +9,52 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            page1()
+                .tabItem {
+                    Label("Home", systemImage: "house.fill")
+                }
+
+            page2()
+                .tabItem {
+                    Label("News", systemImage: "flame.fill")
+                }
+
+            page3()
+                .tabItem {
+                    Label("Share", systemImage: "paperplane.fill")
+                }
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
+}
+
+struct page1: View {
+    var body: some View {
+        Text("Hello from page 1")
+            .fontWeight(.medium)
+            .textScale(.secondary)
+            .foregroundStyle(.gray)
+    }
+}
+
+struct page2: View {
+    var body: some View {
+        Text("Hello from page 2")
+            .fontWeight(.medium)
+            .textScale(.secondary)
+            .foregroundStyle(.gray)
+    }
+}
+
+struct page3: View {
+    var body: some View {
+        Text("Hello from page 3")
+            .fontWeight(.medium)
+            .textScale(.secondary)
+            .foregroundStyle(.gray)
+    }
 }
