@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct BottomTabView: View {
+struct Bottomtabview: View {
     var body: some View {
         TabView {
             Tab("Home", systemImage: "house.fill") {
@@ -17,8 +17,6 @@ struct BottomTabView: View {
     
 }
 
-#Preview {
-    BottomTabView()
+#Preview("Bottom Tab View") {
+    Bottomtabview()
 }
-
-
